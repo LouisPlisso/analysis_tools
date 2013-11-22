@@ -1,0 +1,2 @@
+sqlite> create table far_flows_yt(protocol int, client_id int, direction int, srcAddr varchar(16), srcPort int,  dstAddr varchar(16), dstPort int, initTime float, nbPkt int, l2Bytes int, duration float, l3Bytes int, minHopCount int, maxHopCount int, peakRate float, dscp int, flags int, AS_nb int);
+far_flows_yt
