@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 '''Module docstring
-Template version: 1.2
+Template version: 1.3
 '''
 
 # for python2
@@ -119,10 +119,11 @@ def main(argv=None):
     parser.add_argument('--version', action='version', version=VERSION)
     parser.add_argument('--debug', dest='debug', action='store_true',
                         help=argparse.SUPPRESS)
-    parser.add_argument('-q', '--quiet', dest='quiet',
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('-q', '--quiet', dest='quiet',
                         action='store_true', default=False,
                         help='run as quiet mode')
-    parser.add_argument('-v', '--verbose', dest='verbose',
+    group.add_argument('-v', '--verbose', dest='verbose',
                         action='store_true', default=False,
                         help='run as verbose mode')
     parser.add_argument('-t', dest='template', action='store_true',
@@ -133,8 +134,8 @@ def main(argv=None):
                   'or TEMPLATE.out (default if template is given)'))
     parser.add_argument('in_file', help='input file')
     args = parser.parse_args(argv)
-    if args.quiet and args.verbose:
-        parser.error('Options quiet and verbose are mutually exclusive')
+#    if args.quiet and args.verbose:
+#        parser.error('Options quiet and verbose are mutually exclusive')
     if args.verbose:
         LOG.setLevel(logging.INFO)
     if args.quiet:
