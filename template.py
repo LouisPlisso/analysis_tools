@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # vim: set fileencoding=utf-8 :
 '''Module docstring
 Template version: 1.3
